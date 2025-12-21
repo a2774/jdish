@@ -1,20 +1,25 @@
 "use client";
 
 import Link from "next/link";
+import { usePathname } from "next/navigation";
+
 import { CiHome, CiSettings } from "react-icons/ci";
-import { MdOutlineExplore, MdExplore, MdOutlineDashboard, MdDashboard } from "react-icons/md";
+import {
+  MdOutlineExplore,
+  MdExplore,
+  MdOutlineDashboard,
+  MdDashboard,
+} from "react-icons/md";
 import { IoIosNotificationsOutline, IoIosNotifications } from "react-icons/io";
 import { PiBookmarkSimple, PiBookmarkSimpleFill } from "react-icons/pi";
 import { CgProfile } from "react-icons/cg";
-import { HiOutlineQuestionMarkCircle, HiQuestionMarkCircle } from "react-icons/hi";
+import {
+  HiOutlineQuestionMarkCircle,
+  HiQuestionMarkCircle,
+} from "react-icons/hi";
 
 const menuItems = [
-  {
-    name: "Home",
-    icon: CiHome,
-    hoverIcon: MdDashboard,
-    link: "/",
-  },
+  { name: "Home", icon: CiHome, hoverIcon: MdDashboard, link: "/" },
   {
     name: "Explore",
     icon: MdOutlineExplore,
@@ -33,12 +38,7 @@ const menuItems = [
     hoverIcon: PiBookmarkSimpleFill,
     link: "/bookmarks",
   },
-  {
-    name: "Profile",
-    icon: CgProfile,
-    hoverIcon: CgProfile,
-    link: "/profile",
-  },
+  { name: "Profile", icon: CgProfile, hoverIcon: CgProfile, link: "/profile" },
   {
     name: "Pro Dashboard",
     icon: MdOutlineDashboard,
@@ -60,29 +60,40 @@ const menuItems = [
 ];
 
 export default function Sidebar() {
+  const pathname = usePathname();
+
   return (
-    <aside className="hidden lg:block w-44">
+    <aside className="hidden md:block">
       <div className="sticky top-20">
-        <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-3">
+        <div
+          className="bg-white border border-gray-100 shadow-sm rounded-xl
+          w-16 lg:w-52 p-2 lg:p-3 transition-all"
+        >
           <nav className="space-y-1">
-            {menuItems.map((item, i) => (
-              <Link
-                key={i}
-                href={item.link}
-                className="group flex items-center gap-3 p-2 rounded-lg
-                text-sm text-gray-600 hover:bg-gray-100 transition"
-              >
-                {/* Normal Icon */}
-                <item.icon className="text-lg group-hover:hidden" />
+            {menuItems.map((item) => {
+              const isActive = pathname === item.link;
+              const Icon = isActive ? item.hoverIcon : item.icon;
 
-                {/* Hover Icon */}
-                <item.hoverIcon className="text-lg hidden group-hover:block text-[#f4514f]" />
+              return (
+                <Link
+                  key={item.name}
+                  href={item.link}
+                  className={`group flex items-center gap-3 p-2 rounded-lg transition
+                    ${
+                      isActive
+                        ? "bg-[#f4514f]/10 text-[#f4514f]"
+                        : "text-gray-600 hover:bg-gray-100"
+                    }`}
+                >
+                  <Icon className="text-lg shrink-0" />
 
-                <span className="text-xs group-hover:text-gray-400 transition">
-                  {item.name}
-                </span>
-              </Link>
-            ))}
+                  {/* TEXT (hide on tablet) */}
+                  <span className="hidden lg:inline text-xs font-medium">
+                    {item.name}
+                  </span>
+                </Link>
+              );
+            })}
           </nav>
         </div>
       </div>

@@ -1,4 +1,5 @@
 "use client";
+
 import toast from "react-hot-toast";
 import Link from "next/link";
 import { useState, useEffect } from "react";
@@ -6,7 +7,6 @@ import { LiaEyeSolid } from "react-icons/lia";
 import { FcGoogle } from "react-icons/fc";
 import { IoLogoFacebook } from "react-icons/io5";
 import { useDispatch, useSelector } from "react-redux";
-
 import {
   signupUser,
   resetSignupSuccess,
@@ -16,7 +16,6 @@ import { useRouter } from "next/navigation";
 export default function Page() {
   const dispatch = useDispatch();
   const router = useRouter();
-
   const { signupSuccess, loading, error } = useSelector((state) => state.auth);
 
   const [formData, setFormData] = useState({
@@ -24,29 +23,20 @@ export default function Page() {
     email: "",
     password: "",
   });
-
   const [confirmPassword, setConfirmPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
   const [acceptedTerms, setAcceptedTerms] = useState(false);
 
-  const handleChange = (e) => {
+  const handleChange = (e) =>
     setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
-    if (!acceptedTerms) {
-      toast.error("Please accept Terms & Privacy Policy");
-      return;
-    }
-
-    if (formData.password !== confirmPassword) {
-      toast.error("Passwords do not match");
-      return;
-    }
-
+    if (!acceptedTerms)
+      return toast.error("Please accept Terms & Privacy Policy");
+    if (formData.password !== confirmPassword)
+      return toast.error("Passwords do not match");
     dispatch(signupUser(formData));
   };
 
@@ -59,69 +49,48 @@ export default function Page() {
   }, [signupSuccess, dispatch, router]);
 
   return (
-    <div className="min-h-screen bg-gray-50 flex flex-col items-center justify-center">
+    <div className="min-h-screen bg-gray-50 flex flex-col items-center justify-center px-4">
+      {/* LOGO */}
       <div className="text-center mb-6">
-        <h1 className="text-[#f4514f] text-3xl font-bold mt-10">Jdish</h1>
+        <h1 className="text-[#f4514f] text-3xl font-bold">Jdish</h1>
         <p className="text-xs text-gray-500">Share your culinary journey</p>
       </div>
 
-      <div
-        style={{ width: "360px" }}
-        className=" bg-white rounded-xl shadow-xl p-8"
-      >
-        <div className="flex justify-between w-full mb-8 border-b border-gray-200">
+      {/* CARD */}
+      <div className="w-full max-w-sm sm:max-w-md bg-white rounded-xl shadow-lg p-6 sm:p-8">
+        {/* TABS */}
+        <div className="flex mb-6 border-b">
           <Link
             href="/login"
             className="w-1/2 text-center pb-3 text-xs text-gray-400 font-medium"
           >
             Login
           </Link>
-          <button className="w-1/2 text-center text-xs  pb-3 text-[#f4514f] font-medium border-b border-[#f4514f]">
+          <button className="w-1/2 text-center pb-3 text-xs text-[#f4514f] font-medium border-b-2 border-[#f4514f]">
             Sign Up
           </button>
         </div>
 
-        <form className="space-y-1" onSubmit={handleSubmit}>
-          <div>
-            <label className="text-xs font-medium text-gray-700">
-              Full Name
-            </label>
-            <input
-              type="text"
-              name="name"
-              value={formData.name}
-              onChange={handleChange}
-              placeholder="Enter your full name"
-              required
-              className="mt-1 w-full px-4 py-2 text-xs 
-border border-gray-200 rounded-md 
-outline-none 
-hover:border-[#f4514f]
-focus:border-[#f4514f]
-focus:ring-2 focus:ring-[#f4514f]/40
-transition-all duration-200"
-            />
-          </div>
+        {/* FORM */}
+        <form onSubmit={handleSubmit} className="space-y-3">
+          {["name", "email"].map((field) => (
+            <div key={field}>
+              <label className="text-xs font-medium text-gray-700 capitalize">
+                {field === "name" ? "Full Name" : "Email"}
+              </label>
+              <input
+                type={field === "email" ? "email" : "text"}
+                name={field}
+                value={formData[field]}
+                onChange={handleChange}
+                required
+                className="mt-1 w-full px-4 py-2 text-sm border border-gray-200 rounded-md
+                focus:border-[#f4514f] focus:ring-2 focus:ring-[#f4514f]/40 outline-none"
+              />
+            </div>
+          ))}
 
-          <div>
-            <label className="text-xs font-medium text-gray-700">Email</label>
-            <input
-              type="email"
-              name="email"
-              value={formData.email}
-              onChange={handleChange}
-              placeholder="Enter your email"
-              required
-              className="mt-1 w-full px-4 py-2 text-xs 
-border border-gray-200 rounded-md 
-outline-none 
-hover:border-[#f4514f]
-focus:border-[#f4514f]
-focus:ring-2 focus:ring-[#f4514f]/40
-transition-all duration-200"
-            />
-          </div>
-
+          {/* PASSWORD */}
           <div>
             <label className="text-xs font-medium text-gray-700">
               Password
@@ -132,26 +101,21 @@ transition-all duration-200"
                 name="password"
                 value={formData.password}
                 onChange={handleChange}
-                placeholder="Create a password"
                 required
-                className="mt-1 w-full px-4 py-2 text-xs 
-border border-gray-200 rounded-md 
-outline-none 
-hover:border-[#f4514f]
-focus:border-[#f4514f]
-focus:ring-2 focus:ring-[#f4514f]/40
-transition-all duration-200"
+                className="mt-1 w-full px-4 py-2 text-sm border border-gray-200 rounded-md
+                focus:border-[#f4514f] focus:ring-2 focus:ring-[#f4514f]/40 outline-none"
               />
               <button
                 type="button"
                 onClick={() => setShowPassword(!showPassword)}
-                className="absolute right-3 top-2.5 text-gray-400"
+                className="absolute right-3 top-3 text-gray-400"
               >
                 <LiaEyeSolid />
               </button>
             </div>
           </div>
 
+          {/* CONFIRM PASSWORD */}
           <div>
             <label className="text-xs font-medium text-gray-700">
               Confirm Password
@@ -159,86 +123,68 @@ transition-all duration-200"
             <div className="relative">
               <input
                 type={showConfirmPassword ? "text" : "password"}
-                placeholder="Confirm your password"
                 value={confirmPassword}
                 onChange={(e) => setConfirmPassword(e.target.value)}
                 required
-                className="mt-1 w-full px-4 py-2 text-xs 
-border border-gray-200 rounded-md 
-outline-none 
-hover:border-[#f4514f]
-focus:border-[#f4514f]
-focus:ring-2 focus:ring-[#f4514f]/40
-transition-all duration-200"
+                className="mt-1 w-full px-4 py-2 text-sm border border-gray-200 rounded-md
+                focus:border-[#f4514f] focus:ring-2 focus:ring-[#f4514f]/40 outline-none"
               />
               <button
                 type="button"
                 onClick={() => setShowConfirmPassword(!showConfirmPassword)}
-                className="absolute right-3 top-2.5 text-gray-400"
+                className="absolute right-3 top-3 text-gray-400"
               >
                 <LiaEyeSolid />
               </button>
             </div>
           </div>
 
-          <div className="flex items-start gap-2 text-sm text-gray-600">
+          {/* TERMS */}
+          <div className="flex items-start gap-2">
             <input
               type="checkbox"
               checked={acceptedTerms}
               onChange={() => setAcceptedTerms(!acceptedTerms)}
-              className="mt-1"
             />
-            <p className="text-xs  border-gray-400">
-              I accept the{" "}
-              <span className="text-[#f4514f] text-xs cursor-pointer">
-                Terms
-              </span>{" "}
-              and{" "}
-              <span className="text-[#f4514f] text-xs cursor-pointer">
-                Privacy Policy
-              </span>
+            <p className="text-xs text-gray-600">
+              I accept the <span className="text-[#f4514f]">Terms</span> and{" "}
+              <span className="text-[#f4514f]">Privacy Policy</span>
             </p>
           </div>
 
-          {error && <p className="text-red-500 text-sm text-center">{error}</p>}
+          {error && <p className="text-red-500 text-xs text-center">{error}</p>}
 
+          {/* SUBMIT */}
           <button
             type="submit"
             disabled={loading}
-            className="w-full bg-[#f4514f] text-white py-3 rounded-md font-semibold hover:bg-[#e04341] disabled:opacity-60"
+            className="w-full bg-[#f4514f] text-white py-2.5 rounded-md font-semibold
+            hover:bg-[#e04341] transition disabled:opacity-60"
           >
             {loading ? "Signing up..." : "Sign Up"}
           </button>
-          <div className="flex items-center my-6">
-            <div className="flex-1 h-px bg-gray-200"></div>
-            <span className="px-3 text-xs text-gray-400">or continue with</span>
-            <div className="flex-1 h-px bg-gray-200"></div>
-          </div>
-          <div className="flex gap-4 text-xs text-gray-600">
-            <button
-              type="button"
-              className="flex-1 bg-[#f5f5f5] border border-gray-200 rounded-md py-2 flex items-center justify-center gap-2 hover:bg-gray-100 transition"
-            >
-              <span className="text-xs">
-                <FcGoogle />
-              </span>
-              Google
-            </button>
 
-            <button
-              type="button"
-              className="flex-1 bg-[#f5f5f5] border border-gray-200 rounded-md py-2 flex items-center justify-center gap-2 hover:bg-gray-100 transition"
-            >
-              <span className="text-blue-600 text-xs">
-                <IoLogoFacebook />
-              </span>
-              Facebook
+          {/* SOCIAL */}
+          <div className="flex items-center my-5">
+            <div className="flex-1 h-px bg-gray-200" />
+            <span className="px-3 text-xs text-gray-400">or continue with</span>
+            <div className="flex-1 h-px bg-gray-200" />
+          </div>
+
+          <div className="flex gap-3">
+            <button className="flex-1 border rounded-md py-2 flex justify-center items-center gap-2">
+              <FcGoogle /> Google
+            </button>
+            <button className="flex-1 border rounded-md py-2 flex justify-center items-center gap-2">
+              <IoLogoFacebook className="text-blue-600" /> Facebook
             </button>
           </div>
         </form>
       </div>
-      <p className="text-xs text-gray-600 text-center whitespace-nowrap mt-6 mb-10">
-        <span>For food creators, chefs, and culinary enthusiasts </span>
+
+      {/* FOOTER */}
+      <p className="text-xs text-gray-600 mt-6 text-center">
+        For food creators & chefs ·{" "}
         <span className="text-[#f4514f] cursor-pointer">Learn more</span>
       </p>
     </div>

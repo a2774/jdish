@@ -7,23 +7,14 @@ import { MdVerified } from "react-icons/md";
 
 function Navbar() {
   return (
-    <div className="w-full bg-white border-b border-gray-200">
-      <div className="max-w-7xl mx-auto px-6 h-14 flex items-center relative">
-        {/* LEFT */}
-        <div className="w-1/4">
-          <h2 className="text-lg font-bold text-[#f4514f] ">jdish</h2>
+    <header className="sticky top-0 z-50 w-full bg-white border-b border-gray-200">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 h-14 flex items-center gap-4">
+        <div className="flex-shrink-0">
+          <h2 className="text-lg font-bold text-[#f4514f]">jdish</h2>
         </div>
 
-     
-        <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
-          <div
-            className="flex items-center gap-2 bg-gray-100 px-4 py-1 rounded-full
-    w-[420px]
-    border border-transparent
-    focus-within:border-[#f4514f]
-    focus-within:ring-2 focus-within:ring-[#f4514f]/30
-    transition"
-          >
+        <div className="hidden sm:flex flex-1 justify-center">
+          <div className="flex items-center gap-2 bg-gray-100 px-4 py-1 rounded-full w-full max-w-md border border-transparent focus-within:border-[#f4514f] focus-within:ring-2 focus-within:ring-[#f4514f]/30 transition">
             <CiSearch className="text-gray-500 text-base" />
             <input
               type="text"
@@ -33,13 +24,12 @@ function Navbar() {
           </div>
         </div>
 
-        {/* RIGHT */}
-        <div className="w-1/4 ml-auto flex justify-end items-center gap-4">
-          <IoIosNotifications />
-          <FiMessageCircle />
+        <div className="ml-auto flex items-center gap-3">
+          <IoIosNotifications className="text-xl cursor-pointer" />
+          <FiMessageCircle className="text-xl cursor-pointer" />
 
           <div className="flex items-center gap-2 cursor-pointer">
-            <div className="text-right leading-tight">
+            <div className="hidden md:block text-right leading-tight">
               <p className="text-xs font-medium text-gray-800">
                 Chef Marco Rossi
               </p>
@@ -57,7 +47,18 @@ function Navbar() {
           </div>
         </div>
       </div>
-    </div>
+
+      <div className="sm:hidden px-4 pb-2">
+        <div className="flex items-center gap-2 bg-gray-100 px-4 py-1 rounded-full border border-transparent focus-within:border-[#f4514f] focus-within:ring-2 focus-within:ring-[#f4514f]/30">
+          <CiSearch className="text-gray-500 text-base" />
+          <input
+            type="text"
+            placeholder="Search recipes..."
+            className="bg-transparent outline-none text-sm w-full"
+          />
+        </div>
+      </div>
+    </header>
   );
 }
 
