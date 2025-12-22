@@ -79,15 +79,19 @@ export default function Sidebar() {
                   key={item.name}
                   href={item.link}
                   className={`group flex items-center gap-3 p-2 rounded-lg transition
-                    ${
-                      isActive
-                        ? "bg-[#f4514f]/10 text-[#f4514f]"
-                        : "text-gray-600 hover:bg-gray-100"
-                    }`}
+    ${
+      isActive
+        ? "bg-[#f4514f]/10 text-[#f4514f]"
+        : "text-gray-600 hover:bg-gray-100"
+    }`}
                 >
-                  <Icon className="text-lg shrink-0" />
+                  <Icon
+                    className={`text-lg shrink-0 transition-colors
+      ${
+        isActive ? "text-[#f4514f]" : "text-gray-600 group-hover:text-[#f4514f]"
+      }`}
+                  />
 
-                  {/* TEXT (hide on tablet) */}
                   <span className="hidden lg:inline text-xs font-medium">
                     {item.name}
                   </span>

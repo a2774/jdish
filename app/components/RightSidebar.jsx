@@ -60,7 +60,9 @@ export default function RightSidebar() {
                   className="w-10 h-10 rounded-md object-cover shrink-0"
                 />
                 <div className="min-w-0">
-                  <p className="text-xs font-medium truncate">{item.name}</p>
+                  <p className="text-xs font-medium truncate hover:text-[#f4514f]">
+                    {item.name}
+                  </p>
                   <p className="text-[11px] text-gray-500 truncate">
                     ⭐ {item.rating} • {item.cuisine}
                   </p>
@@ -83,7 +85,9 @@ export default function RightSidebar() {
                   className="w-10 h-10 rounded-md object-cover shrink-0"
                 />
                 <div className="min-w-0">
-                  <p className="text-xs font-medium truncate">{item.name}</p>
+                  <p className="text-xs font-medium truncate hover:text-[#f4514f]">
+                    {item.name}
+                  </p>
                   <p className="text-[11px] text-gray-500 truncate">
                     ⭐ {item.rating} • {item.cuisine}
                   </p>
@@ -131,7 +135,9 @@ export default function RightSidebar() {
                   />
 
                   <div className="min-w-0">
-                    <p className="text-xs font-medium truncate">{item.name}</p>
+                    <p className="text-xs font-medium truncate hover:text-[#f4514f]">
+                      {item.name}
+                    </p>
 
                     <div className="flex items-center gap-1 text-[11px] text-gray-500">
                       <span>{item.rating}</span>
@@ -154,7 +160,9 @@ export default function RightSidebar() {
                     className="w-9 h-9 rounded-full object-cover"
                   />
                   <div>
-                    <p className="text-xs font-medium">Chef Maria Garcia</p>
+                    <p className="text-xs font-medium hover:text-[#f4514f] cursor-pointer">
+                      Chef Maria Garcia
+                    </p>
                     <p className="text-[11px] text-gray-500">@chefamaria</p>
                     <p className="text-[11px] text-gray-500">
                       Professional Chef
@@ -175,10 +183,10 @@ export default function RightSidebar() {
                     className="w-9 h-9 rounded-full object-cover"
                   />
                   <div>
-                    <p className="text-xs font-medium">Foodie Frank</p>
-                    <p className="text-[11px] text-gray-500">
-                      @foodiefrank · Food Critic
+                    <p className="text-xs font-medium hover:text-[#f4514f] cursor-pointer">
+                      Foodie Frank
                     </p>
+                    <p className="text-[11px] text-gray-500">@foodiefrank</p>
                     <p className="text-[11px] text-gray-500">Food Critic</p>
                   </div>
                 </div>
@@ -196,10 +204,11 @@ export default function RightSidebar() {
                     className="w-9 h-9 rounded-full object-cover"
                   />
                   <div>
-                    <p className="text-xs font-medium">Chef Sarah Chen</p>
-                    <p className="text-[11px] text-gray-500">
-                      @chefsarah · Asian Fusion
+                    <p className="text-xs font-medium hover:text-[#f4514f] cursor-pointer">
+                      Chef Sarah Chen
                     </p>
+                    <p className="text-[11px] text-gray-500">@chefsarah</p>
+                    <p className="text-[11px] text-gray-500">Asian Fusion</p>
                   </div>
                 </div>
 
