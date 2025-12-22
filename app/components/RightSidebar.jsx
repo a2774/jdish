@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { FaStar } from "react-icons/fa";
 import { FiUserPlus } from "react-icons/fi";
+
 export default function RightSidebar() {
   const [recipes, setRecipes] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -39,7 +40,7 @@ export default function RightSidebar() {
   ];
 
   return (
-    <aside className="hidden lg:block w-full">
+    <aside className="hidden md:block w-full">
       <div className="sticky top-12">
         <div className="overflow-y-auto max-h-[560px] pr-1 scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-transparent">
           <div className="bg-white rounded-xl border border-gray-300 shadow-sm p-2 mb-3">
@@ -95,6 +96,7 @@ export default function RightSidebar() {
               </div>
             ))}
           </div>
+
           <div className="bg-white rounded-xl border border-gray-300 shadow-sm p-4">
             <h3 className="text-xs font-semibold mb-3">Trending Categories</h3>
 
@@ -109,6 +111,7 @@ export default function RightSidebar() {
               ))}
             </div>
           </div>
+
           <div className="bg-white rounded-xl border border-gray-300 shadow-sm p-2 mb-3 mt-3">
             <h3 className="text-xs font-semibold mb-3">Trending Products</h3>
 
@@ -133,12 +136,10 @@ export default function RightSidebar() {
                     alt={item.name}
                     className="w-10 h-10 rounded-md object-cover shrink-0"
                   />
-
                   <div className="min-w-0">
                     <p className="text-xs font-medium truncate hover:text-[#f4514f]">
                       {item.name}
                     </p>
-
                     <div className="flex items-center gap-1 text-[11px] text-gray-500">
                       <span>{item.rating}</span>
                       <FaStar className="text-[#fdd663] text-xs" />
@@ -149,6 +150,7 @@ export default function RightSidebar() {
               ))}
             </div>
           </div>
+
           <div className="bg-white rounded-xl border border-gray-300 shadow-sm p-3 mb-3">
             <h3 className="text-xs font-semibold mb-3">Who to follow</h3>
 
@@ -169,9 +171,7 @@ export default function RightSidebar() {
                     </p>
                   </div>
                 </div>
-
                 <button className="text-red-500 text-sm">
-                  {" "}
                   <FiUserPlus />
                 </button>
               </div>
@@ -190,9 +190,7 @@ export default function RightSidebar() {
                     <p className="text-[11px] text-gray-500">Food Critic</p>
                   </div>
                 </div>
-
                 <button className="text-red-500 text-sm">
-                  {" "}
                   <FiUserPlus />
                 </button>
               </div>
@@ -211,7 +209,6 @@ export default function RightSidebar() {
                     <p className="text-[11px] text-gray-500">Asian Fusion</p>
                   </div>
                 </div>
-
                 <button className="text-red-500 text-sm">
                   <FiUserPlus />
                 </button>
