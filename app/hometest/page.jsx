@@ -1,8 +1,8 @@
 import React from "react";
-import Navbar from "./components/navbar";
-import Sidebar from "./components/sidebar";
-import RightSidebar from "./components/rightSidebar";
-import Home from "./home/page";
+import Navbar from "../components/navbar";
+import Sidebar from "../components/sidebar";
+import RightSidebar from "../components/rightSidebar";
+import Home from "../home/page";
 
 function Page() {
   return (
@@ -24,7 +24,7 @@ function Page() {
           </section>
 
           <aside className="hidden lg:block lg:col-span-3">
-            <div className="sticky top-25">
+            <div className="sticky top-20">
               <RightSidebar />
             </div>
           </aside>

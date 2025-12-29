@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import { FaStar } from "react-icons/fa";
 import { FiUserPlus } from "react-icons/fi";
-
+import "../globals.css";
 export default function RightSidebar() {
   const [recipes, setRecipes] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -41,10 +41,12 @@ export default function RightSidebar() {
 
   return (
     <aside className="hidden md:block w-full">
-      <div className="sticky top-12">
-        <div className="overflow-y-auto max-h-[calc(100vh-120px)] pr-1 scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-transparent">
+      <div className="sticky top-20">
+        <div className="max-h-screen overflow-y-auto px-4 sm:px-6 md:px-8 lg:px-12 pr-2 ">
           <div className="bg-white rounded-xl border border-gray-300 shadow-sm p-2 mb-3">
-            <h3 className="text-xs font-semibold mb-3">Trending Recipes</h3>
+            <h3 className="text-xs font-semibold mb-3 ml-2">
+              Trending Recipes
+            </h3>
 
             {loading && (
               <p className="text-xs text-gray-500">Loading recipes...</p>
@@ -61,7 +63,7 @@ export default function RightSidebar() {
                   className="w-10 h-10 rounded-md object-cover shrink-0"
                 />
                 <div className="min-w-0">
-                  <p className="text-xs font-medium truncate hover:text-[#f4514f]">
+                  <p className="text-xs font-normal truncate hover:text-[#f4514f]">
                     {item.name}
                   </p>
                   <p className="text-[11px] text-gray-500 truncate">
@@ -73,7 +75,7 @@ export default function RightSidebar() {
           </div>
 
           <div className="bg-white rounded-xl border border-gray-300 shadow-sm p-2 mb-3">
-            <h3 className="text-xs font-semibold mb-3">New Recipes</h3>
+            <h3 className="text-xs font-semibold mb-3 ml-2">New Recipes</h3>
 
             {recipes.map((item) => (
               <div
@@ -86,7 +88,7 @@ export default function RightSidebar() {
                   className="w-10 h-10 rounded-md object-cover shrink-0"
                 />
                 <div className="min-w-0">
-                  <p className="text-xs font-medium truncate hover:text-[#f4514f]">
+                  <p className="text-xs font-normal truncate hover:text-[#f4514f]">
                     {item.name}
                   </p>
                   <p className="text-[11px] text-gray-500 truncate">
@@ -98,7 +100,9 @@ export default function RightSidebar() {
           </div>
 
           <div className="bg-white rounded-xl border border-gray-300 shadow-sm p-4">
-            <h3 className="text-xs font-semibold mb-3">Trending Categories</h3>
+            <h3 className="text-xs font-semibold mb-3 ml-2">
+              Trending Categories
+            </h3>
 
             <div className="flex flex-wrap gap-2">
               {categories.map((item) => (
@@ -113,7 +117,9 @@ export default function RightSidebar() {
           </div>
 
           <div className="bg-white rounded-xl border border-gray-300 shadow-sm p-2 mb-3 mt-3">
-            <h3 className="text-xs font-semibold mb-3">Trending Products</h3>
+            <h3 className="text-xs font-semibold mb-3 ml-2">
+              Trending Products
+            </h3>
 
             <div className="max-h-80">
               {[
@@ -137,7 +143,7 @@ export default function RightSidebar() {
                     className="w-10 h-10 rounded-md object-cover shrink-0"
                   />
                   <div className="min-w-0">
-                    <p className="text-xs font-medium truncate hover:text-[#f4514f]">
+                    <p className="text-xs font-normal truncate hover:text-[#f4514f]">
                       {item.name}
                     </p>
                     <div className="flex items-center gap-1 text-[11px] text-gray-500">
@@ -152,7 +158,7 @@ export default function RightSidebar() {
           </div>
 
           <div className="bg-white rounded-xl border border-gray-300 shadow-sm p-3 mb-3">
-            <h3 className="text-xs font-semibold mb-3">Who to follow</h3>
+            <h3 className="text-xs font-semibold mb-3 ml-2">Who to follow</h3>
 
             <div className="space-y-3">
               <div className="flex items-center justify-between">
@@ -162,7 +168,7 @@ export default function RightSidebar() {
                     className="w-9 h-9 rounded-full object-cover"
                   />
                   <div>
-                    <p className="text-xs font-medium hover:text-[#f4514f] cursor-pointer">
+                    <p className="text-xs font-normal hover:text-[#f4514f] cursor-pointer">
                       Chef Maria Garcia
                     </p>
                     <p className="text-[11px] text-gray-500">@chefamaria</p>
@@ -183,7 +189,7 @@ export default function RightSidebar() {
                     className="w-9 h-9 rounded-full object-cover"
                   />
                   <div>
-                    <p className="text-xs font-medium hover:text-[#f4514f] cursor-pointer">
+                    <p className="text-xs font-mormal hover:text-[#f4514f] cursor-pointer">
                       Foodie Frank
                     </p>
                     <p className="text-[11px] text-gray-500">@foodiefrank</p>
@@ -202,7 +208,7 @@ export default function RightSidebar() {
                     className="w-9 h-9 rounded-full object-cover"
                   />
                   <div>
-                    <p className="text-xs font-medium hover:text-[#f4514f] cursor-pointer">
+                    <p className="text-xs font-normal hover:text-[#f4514f] cursor-pointer">
                       Chef Sarah Chen
                     </p>
                     <p className="text-[11px] text-gray-500">@chefsarah</p>

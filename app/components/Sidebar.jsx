@@ -2,59 +2,59 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-
-import { CiHome, CiSettings } from "react-icons/ci";
 import {
-  MdOutlineExplore,
-  MdExplore,
-  MdOutlineDashboard,
-  MdDashboard,
-} from "react-icons/md";
-import { IoIosNotificationsOutline, IoIosNotifications } from "react-icons/io";
-import { PiBookmarkSimple, PiBookmarkSimpleFill } from "react-icons/pi";
-import { CgProfile } from "react-icons/cg";
-import {
-  HiOutlineQuestionMarkCircle,
-  HiQuestionMarkCircle,
-} from "react-icons/hi";
+  Home,
+  Compass,
+  Bell,
+  Bookmark,
+  User,
+  LayoutGrid,
+  Settings,
+  HelpCircle,
+} from "lucide-react";
 
 const menuItems = [
-  { name: "Home", icon: CiHome, hoverIcon: MdDashboard, link: "/" },
+  { name: "Home", icon: Home, hoverIcon: Home, link: "/" },
   {
     name: "Explore",
-    icon: MdOutlineExplore,
-    hoverIcon: MdExplore,
+    icon: Compass,
+    hoverIcon: Compass,
     link: "/explore",
   },
   {
     name: "Notifications",
-    icon: IoIosNotificationsOutline,
-    hoverIcon: IoIosNotifications,
+    icon: Bell,
+    hoverIcon: Bell,
     link: "/notifications",
   },
   {
     name: "Bookmarks",
-    icon: PiBookmarkSimple,
-    hoverIcon: PiBookmarkSimpleFill,
+    icon: Bookmark,
+    hoverIcon: Bookmark,
     link: "/bookmarks",
   },
-  { name: "Profile", icon: CgProfile, hoverIcon: CgProfile, link: "/profile" },
+  {
+    name: "Profile",
+    icon: User,
+    hoverIcon: User,
+    link: "/profile",
+  },
   {
     name: "Pro Dashboard",
-    icon: MdOutlineDashboard,
-    hoverIcon: MdDashboard,
+    icon: LayoutGrid,
+    hoverIcon: LayoutGrid,
     link: "/pro-dashboard",
   },
   {
     name: "Settings",
-    icon: CiSettings,
-    hoverIcon: CiSettings,
+    icon: Settings,
+    hoverIcon: Settings,
     link: "/settings",
   },
   {
     name: "Help & Support",
-    icon: HiOutlineQuestionMarkCircle,
-    hoverIcon: HiQuestionMarkCircle,
+    icon: HelpCircle,
+    hoverIcon: HelpCircle,
     link: "/help",
   },
 ];
@@ -63,12 +63,9 @@ export default function Sidebar() {
   const pathname = usePathname();
 
   return (
-    <aside className="hidden sm:block">
+    <aside className="hidden md:block w-72 ">
       <div className="sticky top-20">
-        <div
-          className="bg-white border border-gray-100 shadow-sm rounded-xl
-          w-16 lg:w-52 p-2 lg:p-3 transition-all"
-        >
+        <div className=" sm:px-6 md:px-8 lg:px-12 py-4 max-w-7xl mx-auto">
           <nav className="space-y-1">
             {menuItems.map((item) => {
               const isActive = pathname === item.link;
@@ -86,7 +83,9 @@ export default function Sidebar() {
                     }`}
                 >
                   <Icon
-                    className={`text-lg shrink-0 transition-colors
+                    size={18}
+                    strokeWidth={1.5}
+                    className={`shrink-0 transition-colors
                       ${
                         isActive
                           ? "text-[#f4514f]"

@@ -1,7 +1,8 @@
 @import "tailwindcss";
 
 ::-webkit-scrollbar {
-  width: 4px;
+  width: 3px;
+  height: 10px;
 }
 
 ::-webkit-scrollbar-thumb {
