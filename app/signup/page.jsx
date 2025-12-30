@@ -12,7 +12,7 @@ import {
   resetSignupSuccess,
 } from "../../app/src/redux/auth/authSlice";
 import { useRouter } from "next/navigation";
-import Navbar from "../components/navbar";
+import Navbar from "../../components/navbar";
 
 export default function Page() {
   const dispatch = useDispatch();
