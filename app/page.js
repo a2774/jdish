@@ -6,25 +6,25 @@ import Home from "./home/page";
 
 function Page() {
   return (
-    <div>
+    <div className="min-h-screen bg-white">
       <Navbar />
 
-      <div className="sticky top-20 px-4 py-4 w-full">
-        <div className="flex flex-col md:flex-row">
-          <aside className="hidden lg:block lg:col-span-3 xl:col-span-2">
-            <div className="sticky top-18">
+      <div className="w-full px-4 py-4">
+        <div className="flex max-w-7xl mx-auto gap-6">
+          <aside className="hidden lg:block w-64 shrink-0">
+            <div className="sticky top-20">
               <Sidebar />
             </div>
           </aside>
 
-          <section className="col-span-12 lg:col-span-6 xl:col-span-7 w-full">
-            <div className="mt-0 w-full sm:w-full md:w-full lg:w-174 flex justify-center lg:justify-end items-center ml-0 lg:ml-9">
+          <section className="flex-1 w-full">
+            <div className="w-full flex justify-center ml-9">
               <Home />
             </div>
           </section>
 
-          <aside className="hidden lg:block lg:col-span-3">
-            <div className="sticky top-18">
+          <aside className="hidden lg:block w-64 shrink-0">
+            <div className="sticky top-20">
               <RightSidebar />
             </div>
           </aside>

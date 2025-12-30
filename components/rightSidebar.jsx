@@ -42,7 +42,7 @@ export default function RightSidebar() {
   return (
     <aside className="hidden md:block w-full">
       <div className="sticky top-20">
-        <div className="max-h-screen overflow-y-auto px-4 sm:px-6 md:px-8 lg:px-12 pr-2 ">
+        <div className="max-h-screen overflow-y-auto px-4 sm:px-6 md:px-8 lg:px-12 max-w-7xl  pr-2 ">
           <div className="bg-white rounded-xl border border-gray-100 shadow-sm p-2 mb-3">
             <h3 className="text-xs font-semibold mb-3 ml-2">
               Trending Recipes

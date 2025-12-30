@@ -17,7 +17,7 @@ export default function Page() {
 
   return (
     <div className="space-y-6">
-      <section className="bg-white rounded-2xl w-full max-w-full overflow-hidden px-4 sm:px-6 md:px-8 lg:px-12 max-w-7xl  py-4 border border-gray-100 shadow-sm">
+      <section className="bg-white rounded-2xl w-full overflow-hidden px-4 sm:px-6 md:px-8 lg:px-12 max-w-7xl  py-4 border border-gray-100 shadow-sm">
         <input type="file" accept="image/*" ref={imageRef} className="hidden" />
         <input type="file" accept="video/*" ref={videoRef} className="hidden" />
 
