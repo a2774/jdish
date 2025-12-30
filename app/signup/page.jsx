@@ -54,15 +54,15 @@ export default function Page() {
       <Navbar />
 
       <div className="min-h-screen bg-gray-50 flex flex-col items-center justify-center px-4">
-        {/* LOGO */}
+
         <div className="text-center mb-6">
           <h1 className="text-[#f4514f] text-3xl font-bold">Jdish</h1>
           <p className="text-xs text-gray-500">Share your culinary journey</p>
         </div>
 
-        {/* CARD */}
+
         <div className="w-full max-w-sm sm:max-w-md bg-white rounded-xl shadow-lg p-6 sm:p-8">
-          {/* TABS */}
+
           <div className="flex mb-6 border-b">
             <Link
               href="/login"
@@ -75,7 +75,7 @@ export default function Page() {
             </button>
           </div>
 
-          {/* FORM */}
+
           <form onSubmit={handleSubmit} className="space-y-3">
             {["name", "email"].map((field) => (
               <div key={field}>
@@ -94,7 +94,7 @@ export default function Page() {
               </div>
             ))}
 
-            {/* PASSWORD */}
+
             <div>
               <label className="text-xs font-medium text-gray-700">
                 Password
@@ -119,7 +119,7 @@ export default function Page() {
               </div>
             </div>
 
-            {/* CONFIRM PASSWORD */}
+
             <div>
               <label className="text-xs font-medium text-gray-700">
                 Confirm Password
@@ -143,7 +143,7 @@ export default function Page() {
               </div>
             </div>
 
-            {/* TERMS */}
+
             <div className="flex items-start gap-2">
               <input
                 type="checkbox"
@@ -160,7 +160,7 @@ export default function Page() {
               <p className="text-red-500 text-xs text-center">{error}</p>
             )}
 
-            {/* SUBMIT */}
+
             <button
               type="submit"
               disabled={loading}
@@ -170,7 +170,7 @@ export default function Page() {
               {loading ? "Signing up..." : "Sign Up"}
             </button>
 
-            {/* SOCIAL */}
+
             <div className="flex items-center my-5">
               <div className="flex-1 h-px bg-gray-200" />
               <span className="px-3 text-xs text-gray-400">
@@ -190,7 +190,7 @@ export default function Page() {
           </form>
         </div>
 
-        {/* FOOTER */}
+
         <p className="text-xs text-gray-600 mt-6 text-center">
           For food creators & chefs ·{" "}
           <span className="text-[#f4514f] cursor-pointer">Learn more</span>

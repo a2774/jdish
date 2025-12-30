@@ -54,27 +54,24 @@ export default function Page() {
       </div>
 
       <div
-        style={{ width: "380px" }}
-        className=" bg-white rounded-xl shadow-xl p-8"
+        className="w-full max-w-[380px] bg-white rounded-xl shadow-xl p-8 mx-4"
       >
         <div className="flex w-full mb-8 border-b border-gray-200">
           <Link
             href="/login"
-            className={`w-1/2 text-center pb-3 font-medium text-xs ${
-              pathname === "/login"
+            className={`w-1/2 text-center pb-3 font-medium text-xs ${pathname === "/login"
                 ? "text-[#f4514f] border-b-2 border-[#f4514f]"
                 : "text-gray-400"
-            }`}
+              }`}
           >
             Login
           </Link>
           <Link
             href="/signup"
-            className={`w-1/2 text-center pb-3 text-xs text-gray-400 font-normal hover:font-bold hover:text-black transition ${
-              pathname === "/signup"
+            className={`w-1/2 text-center pb-3 text-xs text-gray-400 font-normal hover:font-bold hover:text-black transition ${pathname === "/signup"
                 ? "text-[#f4514f] border-b-2 border-[#f4514f]"
                 : "text-gray-400"
-            }`}
+              }`}
           >
             Sign Up
           </Link>

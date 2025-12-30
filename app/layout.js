@@ -1,5 +1,6 @@
 import "./globals.css";
 import Providers from "./src/redux/providers";
+import MobileNav from "../components/mobileNav";
 
 export const metadata = {
   title: "Jdish",
@@ -10,7 +11,11 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body>
-        <Providers>{children}</Providers>
+        <Providers>
+          {children}
+          <MobileNav />
+        </Providers>
+
       </body>
     </html>
   );
