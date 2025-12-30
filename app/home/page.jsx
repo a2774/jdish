@@ -24,26 +24,17 @@ export default function Page() {
         <div className="flex gap-6">
           <img
             src="/124599.jfif"
-            className="h-10 w-10 rounded-full"
+            className="h-10 w-10 rounded-full -ml-10"
             alt="User profile image"
           />
           <input
             type="text"
             placeholder="Share a recipe"
-            className="
-    h-12
-    w-full max-w-2xl
-    rounded-xl
-    px-4
-    text-sm
-    bg-gray-100
-    border border-gray-100
-    focus:outline-none
-  "
+            className="h-12 w-full max-w-2xl rounded-xl px-4 text-sm font-semibold bg-gray-100 border border-gray-100 focus:outline-none"
           />
         </div>
 
-        <div className="mt-6 flex flex-wrap gap-3 ml-0 sm:ml-14">
+        <div className="mt-6 flex flex-wrap gap-3 ml-0 sm:ml-4">
           <button className="hover:text-[#f4514f] border-gray-300 px-5 py-2.5 rounded-lg text-sm  hover:bg-gray-100 transition">
             <CirclePlus className="inline mr-1 text-xs h-4 w-4 text-gray-700 " />
             <span className="text-ms font-normal text-gray-700"> Recipe</span>
@@ -67,7 +58,7 @@ export default function Page() {
             <span className="text-ms font-normal text-gray-700"> Video</span>
           </button>
 
-          <button className="bg-red-300 border border-gray-300 px-5 h-8 rounded-full text-sm font-medium transition  ml-33">
+          <button className="bg-red-300 border border-gray-300 px-5 h-8 rounded-full text-sm font-medium transition  ml-42">
             <span className="text-ms text-white font-normal">Post</span>
           </button>
         </div>
@@ -119,12 +110,7 @@ export default function Page() {
               <img
                 src={post.img}
                 alt="Chef profile"
-                className="
-        h-10 w-10 rounded-full object-cover
-        ring-1 ring-gray-200
-        transition
-        group-hover:ring-2 group-hover:ring-[#f4514f]
-      "
+                className="h-10 w-10 rounded-full object-cover ring-1 ring-gray-200 transition group-hover:ring-2 group-hover:ring-[#f4514f] "
               />
 
               <div className="flex flex-col">
@@ -148,14 +134,7 @@ export default function Page() {
 
             <button
               aria-label="More options"
-              className="
-      w-8 h-8
-      flex items-center justify-center
-      rounded-full
-      hover:bg-gray-50
-      transition
-      text-gray-500
-    "
+              className=" w-8 h-8 flex items-center justify-center rounded-full hover:bg-gray-50 transition text-gray-500 "
             >
               <span className="text-xl leading-none">…</span>
             </button>

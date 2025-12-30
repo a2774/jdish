@@ -43,7 +43,7 @@ export default function RightSidebar() {
     <aside className="hidden md:block w-full">
       <div className="sticky top-20">
         <div className="max-h-screen overflow-y-auto px-4 sm:px-6 md:px-8 lg:px-12 pr-2 ">
-          <div className="bg-white rounded-xl border border-gray-300 shadow-sm p-2 mb-3">
+          <div className="bg-white rounded-xl border border-gray-100 shadow-sm p-2 mb-3">
             <h3 className="text-xs font-semibold mb-3 ml-2">
               Trending Recipes
             </h3>
@@ -74,7 +74,7 @@ export default function RightSidebar() {
             ))}
           </div>
 
-          <div className="bg-white rounded-xl border border-gray-300 shadow-sm p-2 mb-3">
+          <div className="bg-white rounded-xl border border-gray-100 shadow-sm p-2 mb-3">
             <h3 className="text-xs font-semibold mb-3 ml-2">New Recipes</h3>
 
             {recipes.map((item) => (
@@ -99,7 +99,7 @@ export default function RightSidebar() {
             ))}
           </div>
 
-          <div className="bg-white rounded-xl border border-gray-300 shadow-sm p-4">
+          <div className="bg-white rounded-xl border border-gray-100 shadow-sm p-4">
             <h3 className="text-xs font-semibold mb-3 ml-2">
               Trending Categories
             </h3>
@@ -116,7 +116,7 @@ export default function RightSidebar() {
             </div>
           </div>
 
-          <div className="bg-white rounded-xl border border-gray-300 shadow-sm p-2 mb-3 mt-3">
+          <div className="bg-white rounded-xl border border-gray-100 shadow-sm p-2 mb-3 mt-3">
             <h3 className="text-xs font-semibold mb-3 ml-2">
               Trending Products
             </h3>
@@ -157,7 +157,7 @@ export default function RightSidebar() {
             </div>
           </div>
 
-          <div className="bg-white rounded-xl border border-gray-300 shadow-sm p-3 mb-3">
+          <div className="bg-white rounded-xl border border-gray-100 shadow-sm p-3 mb-3">
             <h3 className="text-xs font-semibold mb-3 ml-2">Who to follow</h3>
 
             <div className="space-y-3">
