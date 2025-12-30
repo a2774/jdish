@@ -1,7 +1,13 @@
 "use client";
 import Link from "next/link";
 
-
+// import { CiSearch, CiSettings, CiHome } from "react-icons/ci";
+// import { MdOutlineDashboard, MdDashboard } from "react-icons/md";
+// import { IoIosNotificationsOutline } from "react-icons/io";
+// import { PiBookmarkSimple } from "react-icons/pi";
+// import { CgProfile } from "react-icons/cg";
+// import { MdVerified } from "react-icons/md";
+// import { HiOutlineQuestionMarkCircle } from "react-icons/hi";
 import { useState, useRef, useEffect } from "react";
 import { CheckCircle2 } from "lucide-react";
 
