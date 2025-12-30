@@ -24,7 +24,7 @@ export default function Page() {
         <div className="flex gap-6">
           <img
             src="/124599.jfif"
-            className="h-10 w-10 rounded-full -ml-10"
+            className="h-10 w-10 rounded-full -ml-10 shrink-0"
             alt="User profile image"
           />
           <input
