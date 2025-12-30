@@ -63,7 +63,7 @@ export default function Sidebar() {
   const pathname = usePathname();
 
   return (
-    <aside className="hidden md:block w-72 mt-30px">
+    <aside className="block w-full md:w-72  mt-30px">
       <div className="sticky top-20">
         <div className=" sm:px-6 md:px-8 lg:px-12 py-4 max-w-7xl mx-auto border border-gray-100 rounded-2xl ">
           <nav className="space-y-1">
