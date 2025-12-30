@@ -17,20 +17,21 @@ export default function Page() {
 
   return (
     <div className="space-y-6">
-      <section className="bg-white rounded-2xl w-full px-4 sm:px-6 md:px-8 lg:px-12 py-4 max-w-7xl mx-auto border border-gray-100 shadow-sm p-2 sm:p-4">
+      <section className="bg-white rounded-2xl w-full max-w-full overflow-hidden px-4 sm:px-6 md:px-8 lg:px-12 max-w-7xl  py-4 border border-gray-100 shadow-sm">
         <input type="file" accept="image/*" ref={imageRef} className="hidden" />
         <input type="file" accept="video/*" ref={videoRef} className="hidden" />
 
-        <div className="flex gap-6">
+        <div className="flex items-center gap-3 w-full">
           <img
             src="/124599.jfif"
-            className="h-10 w-10 rounded-full -ml-10 shrink-0"
-            alt="User profile image"
+            className="h-10 w-10 -ml-10 rounded-full object-cover flex-shrink-0"
+            alt="User profile"
           />
+
           <input
             type="text"
             placeholder="Share a recipe"
-            className="h-12 w-full max-w-2xl rounded-xl px-4 text-sm font-semibold bg-gray-100 border border-gray-100 focus:outline-none"
+            className="h-12 w-full min-w-0 rounded-xl px-4 text-sm font-semibold bg-gray-100 border border-gray-100 focus:outline-none"
           />
         </div>
 
