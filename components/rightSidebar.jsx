@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import { FaStar } from "react-icons/fa";
 import { FiUserPlus } from "react-icons/fi";
-import "../globals.css";
+import ".././app/globals.css";
 export default function RightSidebar() {
   const [recipes, setRecipes] = useState([]);
   const [loading, setLoading] = useState(true);
