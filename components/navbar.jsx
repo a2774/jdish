@@ -29,7 +29,7 @@ function Navbar() {
 
   return (
     <header className="sticky top-0 z-50 w-full bg-white border-b border-gray-200 overflow-x-hidden">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 h-14 flex items-center justify-between">
+      <div className="max-w-7xl mx-auto px-2 sm:px-6 md:px-12 h-14 flex items-center justify-between">
         <div className="flex-shrink-0">
           <h2 className="text-lg font-bold text-[#f4514f]">jdish</h2>
         </div>
@@ -124,7 +124,7 @@ function Navbar() {
       </div>
 
       <div className="md:hidden px-4 pb-2">
-        <div className="flex items-center gap-2 bg-gray-100 px-4 py-1 rounded-full">
+        <div className="hidden md:flex items-center gap-2 bg-gray-100 px-4 py-1 rounded-full">
           <Search className="text-gray-500" />
           <input
             type="text"
