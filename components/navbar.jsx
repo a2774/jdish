@@ -1,58 +1,46 @@
 "use client";
 import Link from "next/link";
-
-// import { CiSearch, CiSettings, CiHome } from "react-icons/ci";
-// import { MdOutlineDashboard, MdDashboard } from "react-icons/md";
-// import { IoIosNotificationsOutline } from "react-icons/io";
-// import { PiBookmarkSimple } from "react-icons/pi";
-// import { CgProfile } from "react-icons/cg";
-// import { MdVerified } from "react-icons/md";
-// import { HiOutlineQuestionMarkCircle } from "react-icons/hi";
 import { useState, useRef, useEffect } from "react";
-import { CheckCircle2 } from "lucide-react";
-
 import {
   Search,
   Settings,
   Bell,
-  Bookmark,
-  Home,
   User,
   LayoutGrid,
   HelpCircle,
   MessageCircle,
-  BadgeCheck,
+  CheckCircle2,
   LogOut,
 } from "lucide-react";
 
 function Navbar() {
   const [open, setOpen] = useState(false);
   const dropdownRef = useRef(null);
+
   useEffect(() => {
-    function handleClickOutside(event) {
-      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+    const handleClickOutside = (e) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(e.target)) {
         setOpen(false);
       }
-    }
-
+    };
     document.addEventListener("mousedown", handleClickOutside);
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
   return (
     <header className="sticky top-0 z-50 w-full bg-white border-b border-gray-200 overflow-x-hidden">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 h-14  md:px-8 lg:px-12 flex items-center gap-4 min-w-0">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 h-14 flex items-center justify-between">
         <div className="flex-shrink-0">
           <h2 className="text-lg font-bold text-[#f4514f]">jdish</h2>
         </div>
 
-        <div className="hidden sm:flex flex-1 justify-center min-w-0">
+        <div className="hidden md:flex flex-1 justify-center">
           <div className="flex items-center gap-2 bg-gray-100 px-4 py-1 rounded-full w-full max-w-md border border-transparent focus-within:border-[#f4514f] focus-within:ring-2 focus-within:ring-[#f4514f]/30">
             <Search className="text-gray-500 h-5 w-5 shrink-0" />
             <input
               type="text"
               placeholder="Search recipes, chefs, or products"
-              className="bg-transparent outline-none text-sm w-full min-w-0"
+              className="bg-transparent outline-none text-sm w-full"
             />
           </div>
         </div>
@@ -135,7 +123,7 @@ function Navbar() {
         </div>
       </div>
 
-      <div className="sm:hidden px-4 pb-2">
+      <div className="md:hidden px-4 pb-2">
         <div className="flex items-center gap-2 bg-gray-100 px-4 py-1 rounded-full">
           <Search className="text-gray-500" />
           <input
