@@ -17,50 +17,51 @@ export default function Page() {
 
   return (
     <div className="space-y-6">
-      <section className="bg-white rounded-2xl w-full overflow-hidden px-4 sm:px-6 md:px-8 lg:px-12 max-w-7xl  py-4 border border-gray-100 shadow-sm">
+      <section className="bg-white rounded-2xl w-full max-w-7xl mx-auto py-4 px-4 border border-gray-100 shadow-sm">
         <input type="file" accept="image/*" ref={imageRef} className="hidden" />
         <input type="file" accept="video/*" ref={videoRef} className="hidden" />
 
-        <div className="flex items-center gap-3 w-full">
+        {/* INPUT ROW */}
+        <div className="flex items-center gap-3">
           <img
             src="/124599.jfif"
-            className="h-10 w-10 -ml-10 rounded-full object-cover flex-shrink-0"
-            alt="User profile"
+            className="h-10 w-10 rounded-full object-cover"
+            alt="profile"
           />
 
           <input
             type="text"
             placeholder="Share a recipe"
-            className="h-12 w-full min-w-0 rounded-xl px-4 text-sm font-semibold bg-gray-100 border border-gray-100 focus:outline-none"
+            className="h-12 flex-1 rounded-xl px-4 text-sm font-semibold bg-gray-100 focus:outline-none"
           />
         </div>
 
-        <div className="mt-6 flex flex-wrap gap-3 ml-0 sm:ml-4">
-          <button className="hover:text-[#f4514f] border-gray-300 px-5 py-2.5 rounded-lg text-sm  hover:bg-gray-100 transition">
-            <CirclePlus className="inline mr-1 text-xs h-4 w-4 text-gray-700 " />
-            <span className="text-ms font-normal text-gray-700"> Recipe</span>
-          </button>
+        <div className="mt-3 flex items-center justify-between">
+          <div className="flex items-center gap-4">
+            <button className="flex items-center gap-1 text-gray-700 hover:text-red-500 pl-12">
+              <CirclePlus className="h-3 w-3 " />
+              <span className="text-xs">Recipe</span>
+            </button>
 
-          <button
-            type="button"
-            onClick={() => imageRef.current && imageRef.current.click()}
-            className="hover:text-[#f4514f] border-gray-300 px-5 py-2.5 rounded-lg text-sm  hover:bg-gray-100 transition"
-          >
-            <Image className="inline mr-1 text-xs h-4 w-4 text-gray-700" />
-            <span className="text-ms font-normal text-gray-700"> Image</span>
-          </button>
+            <button
+              onClick={() => imageRef.current?.click()}
+              className="flex items-center gap-1 text-gray-700 hover:text-red-500"
+            >
+              <Image className="h-3 w-3" />
+              <span className="text-xs">Image</span>
+            </button>
 
-          <button
-            type="button"
-            onClick={() => videoRef.current && videoRef.current.click()}
-            className="hover:text-[#f4514f] border-gray-300 px-5 py-2.5 rounded-lg text-sm  hover:bg-gray-100 transition"
-          >
-            <Video className="inline mr-1 text-xs h-4 w-4 text-gray-700" />
-            <span className="text-ms font-normal text-gray-700"> Video</span>
-          </button>
+            <button
+              onClick={() => videoRef.current?.click()}
+              className="flex items-center gap-1 text-gray-700 hover:text-red-500"
+            >
+              <Video className="h-3 w-3" />
+              <span className="text-xs">Video</span>
+            </button>
+          </div>
 
-          <button className="bg-red-300 border border-gray-300 px-5 h-8 rounded-full text-sm font-medium transition  ml-42">
-            <span className="text-ms text-white font-normal">Post</span>
+          <button className="bg-red-400 px-6 h-9 rounded-full text-sm font-medium text-white">
+            Post
           </button>
         </div>
       </section>
@@ -141,19 +142,19 @@ export default function Page() {
             </button>
           </div>
 
-          <p className="text-xs font-normal text-gray-800 mt-4 mb-3">
+          <p className="text-ms font-normal text-gray-800 mt-4 mb-3 px-1 ml-2px">
             {post.title}
           </p>
 
-          <div className="rounded-xl overflow-hidden">
+          <div className="rounded-2xl overflow-hidden px-1">
             <img
               src={post.photo}
-              className="w-full h-64 object-cover"
+              className="w-full h-64 object-cover "
               alt="Food"
             />
           </div>
 
-          <p className="text-[12px] text-gray-500 mt-3 leading-relaxed">
+          <p className="text-[12px] text-gray-500 mt-3 leading-relaxed px-1">
             A classic Italian recipe with homemade ingredients and fresh
             toppings. Perfect for family dinners and gatherings.In a large bowl,
             combine pasta, tomatoes, cucumber, onion, mozzarella, olives, and
@@ -161,20 +162,23 @@ export default function Page() {
           </p>
 
           <div className="flex items-center justify-between text-gray-500 text-xs pt-2">
-            <div className="flex items-center gap-6">
-              <span className="hover:text-[#f4514f] cursor-pointer flex items-center gap-1 w-14">
+            <div className="flex items-center gap-4">
+              <span className="hover:text-[#f4514f] cursor-pointer flex items-center gap-1">
                 <FaArrowUp />
                 <span>1.2K</span>
               </span>
-              <span className="hover:text-[#f4514f] cursor-pointer flex items-center gap-1 w-14">
+
+              <span className="hover:text-[#f4514f] cursor-pointer flex items-center gap-1">
                 <FiMessageCircle />
                 <span>234</span>
               </span>
-              <span className="hover:text-[#f4514f] cursor-pointer flex items-center gap-1 w-16">
+
+              <span className="hover:text-[#f4514f] cursor-pointer flex items-center gap-1">
                 <CiShare2 />
                 <span>Share</span>
               </span>
             </div>
+
             <span className="hover:text-[#f4514f] cursor-pointer flex items-center">
               <IoBookmarkOutline className="h-4 w-4" />
             </span>

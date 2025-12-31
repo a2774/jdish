@@ -13,3 +13,10 @@
 ::-webkit-scrollbar-track {
   background: transparent;
 }
+.direction-rtl {
+  direction: rtl;
+}
+
+.direction-ltr {
+  direction: ltr;
+}
